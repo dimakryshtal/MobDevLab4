@@ -59,9 +59,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(moviesArr[indexPath.row].imdbID.prefix(2) == "tt") {
+        if(moviesArr[indexPath.row].imdbID.prefix(2) == "tt" && !searching) {
+            performSegue(withIdentifier: "showdetail", sender: self)
+        } else if (searchArr[indexPath.row].imdbID.prefix(2) == "tt" && searching) {
             performSegue(withIdentifier: "showdetail", sender: self)
         } else {
+            print(moviesArr[indexPath.row].title)
+            print(searching)
             print("No imdbID")
             self.tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -91,19 +95,18 @@ extension ListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showdetail") {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                if(moviesArr[indexPath.row].imdbID != "") {
-                    let controller = segue.destination as! MovieDetailsViewController
-                    var data: Movie?
+
+                let controller = segue.destination as! MovieDetailsViewController
+                var data: Movie?
    
-                    if searching {
-                        data = Manager.shared.getText(searchArr[indexPath.row].imdbID, type: Movie.self)
-                    } else {
-                        data = Manager.shared.getText(moviesArr[indexPath.row].imdbID, type: Movie.self)
-                    }
-                    
-                    controller.details = data
-                    self.tableView.deselectRow(at: indexPath, animated: true)
+                if searching {
+                    data = Manager.shared.getText(searchArr[indexPath.row].imdbID, type: Movie.self)
+                } else {
+                    data = Manager.shared.getText(moviesArr[indexPath.row].imdbID, type: Movie.self)
                 }
+                
+                controller.details = data
+                self.tableView.deselectRow(at: indexPath, animated: true)
             }
         }
       
