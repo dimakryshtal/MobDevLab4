@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="SDS-MA-Myt" customClass="DrawingViewController" customModule="MobDevLab1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KzR-LT-lJe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="5wH-B6-NlO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -128,7 +128,13 @@
                             <constraint firstItem="dwY-gy-LpZ" firstAttribute="top" secondItem="6Wr-Th-JP6" secondAttribute="top" id="vmq-q8-bfd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nnr-G1-hme"/>
+                    <navigationItem key="navigationItem" id="nnr-G1-hme">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="qa1-GE-RaA">
+                            <connections>
+                                <segue destination="uhn-YO-CGz" kind="show" identifier="addMovie" id="DA3-DF-ADS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="dwY-gy-LpZ" id="pw7-Jn-aFg"/>
                         <outlet property="tableView" destination="2mr-kX-Rnp" id="zYc-UU-FX1"/>
@@ -297,7 +303,7 @@
                             <constraint firstItem="nrF-f0-QG8" firstAttribute="trailing" secondItem="TK3-7M-a7k" secondAttribute="trailing" id="gjU-4N-tj8"/>
                             <constraint firstItem="TK3-7M-a7k" firstAttribute="top" secondItem="nrF-f0-QG8" secondAttribute="top" id="m7y-sO-WjI"/>
                             <constraint firstItem="nrF-f0-QG8" firstAttribute="bottom" secondItem="TK3-7M-a7k" secondAttribute="bottom" id="wU3-Im-eF7"/>
-                            <constraint firstItem="LnK-fd-v5U" firstAttribute="width" secondItem="MTG-Zv-Lt3" secondAttribute="width" id="yHx-yL-1Vw"/>
+                            <constraint firstItem="LnK-fd-v5U" firstAttribute="width" secondItem="TK3-7M-a7k" secondAttribute="width" id="yHx-yL-1Vw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h66-Uc-fmE"/>
@@ -320,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPu-sd-75J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550.7246376811595" y="2019.6428571428571"/>
+            <point key="canvasLocation" x="1551" y="2085"/>
         </scene>
         <!--FirstTab-->
         <scene sceneID="AP5-rn-7pr">
@@ -369,11 +375,32 @@
             </objects>
             <point key="canvasLocation" x="581" y="-160"/>
         </scene>
+        <!--Add Movie View Controller-->
+        <scene sceneID="b7N-jh-arQ">
+            <objects>
+                <viewController id="uhn-YO-CGz" customClass="AddMovieViewController" customModule="MobDevLab1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Hk-nv-jJ7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0nb-5F-QKa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rc1-VP-1cE"/>
+                    <connections>
+                        <segue destination="Zza-cL-8n4" kind="unwind" identifier="unwindToList" unwindAction="unwindToVCWithSegue:" id="Yrg-8r-pl5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLY-Pg-fVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Zza-cL-8n4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="2085"/>
+        </scene>
     </scenes>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="moon.fill" catalog="system" width="128" height="121"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

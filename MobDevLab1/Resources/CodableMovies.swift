@@ -49,6 +49,13 @@ struct Movie: Codable {
         case type = "Type"
         case production = "Production"
     }
+    init(title:String, year: String, type: String) {
+        self.title = title
+        self.year = year
+        self.type = type
+        self.imdbID = ""
+        self.poster = ""
+    }
 }
 
 struct Movies: Codable {    

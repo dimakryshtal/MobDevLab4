@@ -16,19 +16,27 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var myContentView: UIView!
     @IBOutlet var myStackView: UIStackView!
     
+    lazy var constr = [
+        myContentView.bottomAnchor.constraint(greaterThanOrEqualTo: myImageView.bottomAnchor, constant: 10),
+        myContentView.bottomAnchor.constraint(greaterThanOrEqualTo: myStackView.bottomAnchor, constant: 10)
+    ]
+    
     func setImageAndLabel(movie: Movie) {
         if(movie.poster != "") {
             myImageView.image = Manager.shared.getImage(movie.poster as NSString)
         } else {
             myImageView.image = nil
         }
-        myContentView.bottomAnchor.constraint(greaterThanOrEqualTo: myImageView.bottomAnchor, constant: 10).isActive = true
-        myContentView.bottomAnchor.constraint(greaterThanOrEqualTo: myStackView.bottomAnchor, constant: 10).isActive = true
+        
+        constr[0].priority = UILayoutPriority(999)
+        constr[1].priority = UILayoutPriority(999)
+        constr[0].isActive = true
+        constr[1].isActive = true
+        
         title.text = movie.title
         if(movie.year == "") {
             year.text = nil
             year.isHidden = true
-            
         } else {
             year.isHidden = false
             year.text = movie.year

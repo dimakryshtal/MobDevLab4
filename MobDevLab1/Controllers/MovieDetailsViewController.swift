@@ -47,6 +47,4 @@ class MovieDetailsViewController: UIViewController {
         rating.text = "Rating: " + details!.rated!
         plot.text = "Plot: " + details!.plot!
     }
-    
-
 }

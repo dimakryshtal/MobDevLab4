@@ -17,6 +17,7 @@
 		32BC842725CEDA0600DB61EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BC842625CEDA0600DB61EA /* Assets.xcassets */; };
 		32BC842A25CEDA0600DB61EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BC842825CEDA0600DB61EA /* LaunchScreen.storyboard */; };
 		32C6067025E7A5BD00230A2A /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6066F25E7A5BD00230A2A /* MovieDetailsViewController.swift */; };
+		32DC4E4625ED2D7700A2234B /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC4E4525ED2D7700A2234B /* AddMovieViewController.swift */; };
 		32EBF23D25E9779A00C26A33 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBF23C25E9779A00C26A33 /* Manager.swift */; };
 		32ECE1A025E1299B00F1D58C /* CodableMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ECE19F25E1299B00F1D58C /* CodableMovies.swift */; };
 		32F055D825D580DB00ADCC38 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F055D725D580DB00ADCC38 /* DrawingViewController.swift */; };
@@ -55,6 +56,7 @@
 		32BC842925CEDA0600DB61EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32BC842B25CEDA0600DB61EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32C6066F25E7A5BD00230A2A /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		32DC4E4525ED2D7700A2234B /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
 		32EBF23C25E9779A00C26A33 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		32ECE19F25E1299B00F1D58C /* CodableMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableMovies.swift; sourceTree = "<group>"; };
 		32F055D725D580DB00ADCC38 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				321AEA8F25E00E8A000C123E /* ListViewController.swift */,
 				32FC8D4D25E1639C00377BE2 /* CustomTableViewCell.swift */,
 				32C6066F25E7A5BD00230A2A /* MovieDetailsViewController.swift */,
+				32DC4E4525ED2D7700A2234B /* AddMovieViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				32EBF23D25E9779A00C26A33 /* Manager.swift in Sources */,
 				32BC842025CED9FF00DB61EA /* SceneDelegate.swift in Sources */,
 				321AEA9025E00E8A000C123E /* ListViewController.swift in Sources */,
+				32DC4E4625ED2D7700A2234B /* AddMovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
