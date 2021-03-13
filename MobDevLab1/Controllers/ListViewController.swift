@@ -61,12 +61,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(moviesArr[indexPath.row].imdbID.prefix(2) == "tt" && !searching) {
             performSegue(withIdentifier: "showdetail", sender: self)
-        } else if (searchArr[indexPath.row].imdbID.prefix(2) == "tt" && searching) {
+        } else if (searching && searchArr[indexPath.row].imdbID.prefix(2) == "tt") {
             performSegue(withIdentifier: "showdetail", sender: self)
         } else {
-            print(moviesArr[indexPath.row].title)
-            print(searching)
-            print("No imdbID")
             self.tableView.deselectRow(at: indexPath, animated: true)
         }
     }
@@ -81,8 +78,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .none)
         }
     }
-    
-     
 }
 extension ListViewController {
     @IBAction func unwindToVC(segue: UIStoryboardSegue) {
@@ -120,7 +115,6 @@ extension ListViewController: UISearchBarDelegate {
             searching = false
             searchArr = [Movie]()
         } else {
-            print(searchText)
             searchArr = moviesArr.filter(){$0.title.lowercased().hasPrefix(searchText.lowercased())}
             searching = true
         }
@@ -128,6 +122,7 @@ extension ListViewController: UISearchBarDelegate {
     }
     
 }
+
 extension ListViewController {
     func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
